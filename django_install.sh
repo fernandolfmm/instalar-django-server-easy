@@ -134,10 +134,7 @@ echo '      proxy_redirect off;' >> /etc/nginx/sites-available/django_app
 echo '      proxy_pass http://django_app;' >> /etc/nginx/sites-available/django_app
 echo '    }' >> /etc/nginx/sites-available/django_app
 echo '}' >> /etc/nginx/sites-available/django_app
-# Le metemos la IP al settings al final
-echo 'from .settings import ALLOWED_HOSTS' >> /home/django/$project/$djapp/localsettings.py
-echo 'ALLOWED_HOSTS += ["'$serverip'"]' >> /home/django/$project/$djapp/localsettings.py
-echo 'STATIC_ROOT = "/home/django/static/"' >> /home/django/$project/$djapp/localsettings.py
+
 
 sudo ln -s /etc/nginx/sites-available/django_app /etc/nginx/sites-enabled/django_app
 sudo rm /etc/nginx/sites-enabled/default
